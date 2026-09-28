@@ -85,7 +85,7 @@ Instructions:
       analysis,
       memories,
       memoryCount: memories.length,
-      memoryUsed: memories.length > 0,
+      memoryUsed: analysis.trimStart().startsWith("MEMORY USED: YES"),
     });
   } catch (error) {
     console.error("Incident analysis error:", error);
