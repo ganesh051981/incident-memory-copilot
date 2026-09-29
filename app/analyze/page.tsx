@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Navbar from "../components/Navbar";
@@ -45,12 +45,12 @@ export default function AnalyzePage() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
+    <main className="min-h-screen bg-[#f6f5f0] text-[#111111]">
       <Navbar />
 
       <div className="mx-auto max-w-7xl px-6 py-14 md:px-10 md:py-20">
         <div className="mb-12">
-          <p className="text-xs uppercase tracking-[0.28em] text-slate-500">
+          <p className="text-xs uppercase tracking-[0.28em] text-[#77776f]">
             01 / INCIDENT ANALYSIS
           </p>
 
@@ -60,15 +60,15 @@ export default function AnalyzePage() {
             BREAKING?
           </h1>
 
-          <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-500 md:text-base">
+          <p className="mt-6 max-w-2xl text-sm leading-7 text-[#77776f] md:text-base">
             Describe the production symptoms. The copilot searches
             organizational memory before generating its analysis.
           </p>
         </div>
 
-        <section className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
+        <section className="rounded-3xl border border-black/10 bg-[#111111]/[0.03] p-6 md:p-8">
           <div className="mb-4 flex items-center justify-between">
-            <label className="text-xs uppercase tracking-[0.18em] text-slate-500">
+            <label className="text-xs uppercase tracking-[0.18em] text-[#77776f]">
               Current incident
             </label>
 
@@ -78,9 +78,9 @@ export default function AnalyzePage() {
                   "The Payment API is timing out again. Latency has increased sharply, and database connection usage is close to its limit during an analytics workload."
                 )
               }
-              className="text-xs uppercase tracking-[0.12em] text-slate-500 transition hover:text-white"
+              className="text-xs uppercase tracking-[0.12em] text-[#77776f] transition hover:text-[#111111]"
             >
-              Load demo →
+              Load demo {"->"}
             </button>
           </div>
 
@@ -88,30 +88,30 @@ export default function AnalyzePage() {
             value={incident}
             onChange={(e) => setIncident(e.target.value)}
             placeholder="Describe what engineers are seeing..."
-            className="min-h-44 w-full resize-none rounded-2xl border border-white/10 bg-slate-950 p-5 text-sm leading-7 text-white outline-none placeholder:text-slate-700 focus:border-white/25"
+            className="min-h-44 w-full resize-none rounded-2xl border border-black/10 bg-[#f6f5f0] p-5 text-sm leading-7 text-[#111111] outline-none placeholder:text-[#a3a39b] focus:border-black/25"
           />
 
           <div className="mt-5 flex items-center justify-between gap-4">
-            <p className="text-xs text-slate-600">
-              Hindsight recall → Groq reasoning
+            <p className="text-xs text-[#8d8d85]">
+              Hindsight recall {"->"} Groq reasoning
             </p>
 
             <button
-              onClick={analyzeIncident}
-              disabled={loading || !incident.trim()}
-              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-40"
-            >
-              {loading ? "Analyzing..." : "Analyze Incident →"}
-            </button>
+  onClick={analyzeIncident}
+  disabled={loading || !incident.trim()}
+  className="rounded-full bg-[#111111] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#2a2a2a] disabled:cursor-not-allowed disabled:opacity-40"
+>
+  {loading ? "Analyzing..." : "Analyze Incident →"}
+</button>
           </div>
         </section>
 
         {result && (
           <div className="mt-8 grid gap-6 lg:grid-cols-[1.6fr_1fr]">
-            <section className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
-              <div className="flex flex-col gap-4 border-b border-white/10 pb-6 sm:flex-row sm:items-start sm:justify-between">
+            <section className="rounded-3xl border border-black/10 bg-[#111111]/[0.03] p-6 md:p-8">
+              <div className="flex flex-col gap-4 border-b border-black/10 pb-6 sm:flex-row sm:items-start sm:justify-between">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-slate-500">
+                  <p className="text-xs uppercase tracking-[0.18em] text-[#77776f]">
                     Agent reasoning
                   </p>
                   <h2 className="mt-2 text-xl font-semibold">
@@ -121,19 +121,19 @@ export default function AnalyzePage() {
 
                 <div className="flex flex-wrap gap-2">
                   {result.memoryUsed && (
-                    <span className="rounded-full border border-emerald-700 bg-emerald-950 px-3 py-1 text-xs text-emerald-400">
+                    <span className="rounded-full border border-emerald-600 bg-[#edf7ef] px-3 py-1 text-xs text-emerald-700">
                       Hindsight Memory Used
                     </span>
                   )}
 
-                  <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-500">
+                  <span className="rounded-full border border-black/10 px-3 py-1 text-xs text-[#77776f]">
                     Groq
                   </span>
                 </div>
               </div>
 
               {result.success ? (
-                <div className="mt-6 whitespace-pre-wrap text-sm leading-7 text-slate-300">
+                <div className="mt-6 whitespace-pre-wrap text-sm leading-7 text-[#30302d]">
                   {result.analysis}
                 </div>
               ) : (
@@ -143,22 +143,22 @@ export default function AnalyzePage() {
               )}
             </section>
 
-            <section className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
-              <p className="text-xs uppercase tracking-[0.18em] text-slate-500">
-                Hindsight recall
+            <section className="rounded-3xl border border-black/10 bg-[#111111]/[0.03] p-6 md:p-8">
+              <p className="text-xs uppercase tracking-[0.18em] text-[#77776f]">
+                Hindsight recall {"->"} Groq reasoning
               </p>
 
-              <div className="mt-4 flex items-end justify-between border-b border-white/10 pb-5">
+              <div className="mt-4 flex items-end justify-between border-b border-black/10 pb-5">
                 <div>
                   <div className="text-4xl font-semibold">
                     {result.memoryCount ?? 0}
                   </div>
-                  <div className="mt-1 text-xs uppercase tracking-[0.12em] text-slate-600">
+                  <div className="mt-1 text-xs uppercase tracking-[0.12em] text-[#8d8d85]">
                     memories recalled
                   </div>
                 </div>
 
-                <span className="text-xs text-emerald-400">
+                <span className="text-xs text-emerald-700">
                   {result.memoryUsed ? "Relevant history found" : "No memory used"}
                 </span>
               </div>
@@ -168,19 +168,19 @@ export default function AnalyzePage() {
                   result.memories.map((memory, index) => (
                     <div
                       key={index}
-                      className="rounded-2xl border border-white/10 bg-slate-950 p-4"
+                      className="rounded-2xl border border-black/10 bg-[#f6f5f0] p-4"
                     >
-                      <div className="mb-2 text-[11px] uppercase tracking-[0.14em] text-slate-600">
+                      <div className="mb-2 text-[11px] uppercase tracking-[0.14em] text-[#8d8d85]">
                         Memory {String(index + 1).padStart(2, "0")}
                       </div>
 
-                      <p className="text-sm leading-6 text-slate-400">
+                      <p className="text-sm leading-6 text-[#575751]">
                         {memory}
                       </p>
                     </div>
                   ))
                 ) : (
-                  <p className="text-sm leading-6 text-slate-600">
+                  <p className="text-sm leading-6 text-[#8d8d85]">
                     No relevant historical memory was recalled.
                   </p>
                 )}

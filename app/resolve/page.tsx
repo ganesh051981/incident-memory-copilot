@@ -92,13 +92,13 @@ export default function ResolvePage() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
+    <main className="min-h-screen bg-[#f6f5f0] text-[#111111]">
       <Navbar />
 
       <div className="mx-auto max-w-5xl px-6 py-14 md:px-10 md:py-20">
         <div>
-          <p className="text-xs uppercase tracking-[0.28em] text-slate-500">
-            05 / RESOLUTION
+          <p className="text-xs uppercase tracking-[0.28em] text-[#77776f]">
+            06 / RESOLUTION
           </p>
 
           <h1 className="mt-5 text-4xl font-semibold leading-tight tracking-[-0.035em] md:text-6xl">
@@ -107,27 +107,27 @@ export default function ResolvePage() {
             THE LESSON.
           </h1>
 
-          <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-500 md:text-base">
+          <p className="mt-6 max-w-2xl text-sm leading-7 text-[#77776f] md:text-base">
             When an incident is resolved, capture what happened and what fixed
             it. That knowledge becomes available to engineers facing similar
             failures later.
           </p>
         </div>
 
-        <section className="mt-12 rounded-3xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
-          <div className="flex flex-col justify-between gap-4 border-b border-white/10 pb-6 md:flex-row md:items-end">
+        <section className="mt-12 rounded-3xl border border-black/10 bg-[#111111]/[0.03] p-6 md:p-8">
+          <div className="flex flex-col justify-between gap-4 border-b border-black/10 pb-6 md:flex-row md:items-end">
             <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-slate-500">
+              <p className="text-xs uppercase tracking-[0.18em] text-[#77776f]">
                 Resolution record
               </p>
-              <p className="mt-2 text-sm text-slate-600">
+              <p className="mt-2 text-sm text-[#8d8d85]">
                 Required fields are marked by the workflow itself.
               </p>
             </div>
 
             <button
               onClick={loadDemo}
-              className="rounded-full border border-white/10 px-5 py-2.5 text-xs uppercase tracking-[0.12em] text-slate-400 transition hover:text-white"
+              className="rounded-full border border-black/10 px-5 py-2.5 text-xs uppercase tracking-[0.12em] text-[#575751] transition hover:text-[#111111]"
             >
               Load demo →
             </button>
@@ -149,14 +149,14 @@ export default function ResolvePage() {
             />
 
             <div>
-              <label className="mb-2 block text-xs uppercase tracking-[0.14em] text-slate-600">
+              <label className="mb-2 block text-xs uppercase tracking-[0.14em] text-[#8d8d85]">
                 Severity
               </label>
 
               <select
                 value={form.severity}
                 onChange={(event) => update("severity", event.target.value)}
-                className="w-full rounded-2xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white outline-none focus:border-white/25"
+                className="w-full rounded-2xl border border-black/10 bg-[#f6f5f0] px-4 py-3 text-sm text-[#111111] outline-none focus:border-black/25"
               >
                 <option>SEV-1</option>
                 <option>SEV-2</option>
@@ -200,13 +200,13 @@ export default function ResolvePage() {
             />
           </div>
 
-          <div className="mt-7 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-7 flex flex-col gap-4 border-t border-black/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
               {message && (
                 <p
                   className={`text-sm ${
                     message.includes("successfully")
-                      ? "text-emerald-400"
+                      ? "text-emerald-700"
                       : "text-amber-400"
                   }`}
                 >
@@ -215,18 +215,18 @@ export default function ResolvePage() {
               )}
             </div>
 
-            <button
-              onClick={saveMemory}
-              disabled={saving}
-              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-40"
-            >
-              {saving ? "Saving..." : "Save to Hindsight →"}
-            </button>
+           <button
+  onClick={saveMemory}
+  disabled={saving}
+  className="rounded-full bg-[#111111] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#2a2a2a] disabled:cursor-not-allowed disabled:opacity-40"
+>
+  {saving ? "Saving..." : "Save to Hindsight ->"}
+</button>
           </div>
         </section>
 
-        <section className="mt-8 rounded-3xl border border-emerald-900/50 bg-emerald-950/20 p-6">
-          <p className="text-xs uppercase tracking-[0.18em] text-emerald-700">
+        <section className="mt-8 rounded-3xl border border-emerald-700/40 bg-[#edf7ef]/20 p-6">
+          <p className="text-xs uppercase tracking-[0.18em] text-emerald-800">
             The memory loop
           </p>
 
@@ -255,7 +255,7 @@ function Field({
 }) {
   return (
     <div>
-      <label className="mb-2 block text-xs uppercase tracking-[0.14em] text-slate-600">
+      <label className="mb-2 block text-xs uppercase tracking-[0.14em] text-[#8d8d85]">
         {label}
       </label>
 
@@ -263,7 +263,7 @@ function Field({
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
-        className="w-full rounded-2xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white outline-none placeholder:text-slate-700 focus:border-white/25"
+        className="w-full rounded-2xl border border-black/10 bg-[#f6f5f0] px-4 py-3 text-sm text-[#111111] outline-none placeholder:text-[#a3a39b] focus:border-black/25"
       />
     </div>
   );
@@ -282,7 +282,7 @@ function TextArea({
 }) {
   return (
     <div>
-      <label className="mb-2 block text-xs uppercase tracking-[0.14em] text-slate-600">
+      <label className="mb-2 block text-xs uppercase tracking-[0.14em] text-[#8d8d85]">
         {label}
       </label>
 
@@ -290,7 +290,7 @@ function TextArea({
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
-        className="min-h-28 w-full resize-none rounded-2xl border border-white/10 bg-slate-950 px-4 py-3 text-sm leading-6 text-white outline-none placeholder:text-slate-700 focus:border-white/25"
+        className="min-h-28 w-full resize-none rounded-2xl border border-black/10 bg-[#f6f5f0] px-4 py-3 text-sm leading-6 text-[#111111] outline-none placeholder:text-[#a3a39b] focus:border-black/25"
       />
     </div>
   );
@@ -298,9 +298,9 @@ function TextArea({
 
 function Step({ number, text }: { number: string; text: string }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-slate-950/50 p-4">
-      <div className="text-xs text-emerald-700">{number}</div>
-      <p className="mt-3 text-sm leading-6 text-slate-400">{text}</p>
+    <div className="rounded-2xl border border-black/10 bg-[#f6f5f0]/50 p-4">
+      <div className="text-xs text-emerald-800">{number}</div>
+      <p className="mt-3 text-sm leading-6 text-[#575751]">{text}</p>
     </div>
   );
 }

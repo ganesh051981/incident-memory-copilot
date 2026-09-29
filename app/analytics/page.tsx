@@ -24,13 +24,13 @@ const severity = [
 
 export default function AnalyticsPage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
+    <main className="min-h-screen bg-[#f6f5f0] text-[#111111]">
       <Navbar />
 
       <div className="mx-auto max-w-7xl px-6 py-14 md:px-10 md:py-20">
         <div className="max-w-4xl">
-          <p className="text-xs uppercase tracking-[0.28em] text-slate-500">
-            03 / INCIDENT ANALYTICS
+          <p className="text-xs uppercase tracking-[0.28em] text-[#77776f]">
+            05 / INCIDENT ANALYTICS
           </p>
 
           <h1 className="mt-5 text-4xl font-semibold leading-tight tracking-[-0.035em] md:text-6xl">
@@ -39,50 +39,50 @@ export default function AnalyticsPage() {
             PATTERNS.
           </h1>
 
-          <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-500 md:text-base">
+          <p className="mt-6 max-w-2xl text-sm leading-7 text-[#77776f] md:text-base">
             Turn historical incidents into a visual view of where failures
             concentrate and which services require the most attention.
           </p>
         </div>
 
         {/* Summary cards */}
-        <section className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 md:grid-cols-4">
-          <div className="bg-slate-950 p-6 md:p-8">
-            <p className="text-xs uppercase tracking-[0.16em] text-slate-600">
+        <section className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-black/10 bg-[#111111]/10 md:grid-cols-4">
+          <div className="bg-[#f6f5f0] p-6 md:p-8">
+            <p className="text-xs uppercase tracking-[0.16em] text-[#8d8d85]">
               Incidents
             </p>
-            <p className="mt-4 text-4xl font-semibold">04</p>
-            <p className="mt-2 text-xs text-slate-600">
+            <p className="mt-4 text-4xl font-semibold">03</p>
+            <p className="mt-2 text-xs text-[#8d8d85]">
               Demo incident records
             </p>
           </div>
 
-          <div className="bg-slate-950 p-6 md:p-8">
-            <p className="text-xs uppercase tracking-[0.16em] text-slate-600">
+          <div className="bg-[#f6f5f0] p-6 md:p-8">
+            <p className="text-xs uppercase tracking-[0.16em] text-[#8d8d85]">
               Services
             </p>
             <p className="mt-4 text-4xl font-semibold">03</p>
-            <p className="mt-2 text-xs text-slate-600">
+            <p className="mt-2 text-xs text-[#8d8d85]">
               Distinct incident domains
             </p>
           </div>
 
-          <div className="bg-slate-950 p-6 md:p-8">
-            <p className="text-xs uppercase tracking-[0.16em] text-slate-600">
+          <div className="bg-[#f6f5f0] p-6 md:p-8">
+            <p className="text-xs uppercase tracking-[0.16em] text-[#8d8d85]">
               Highest severity
             </p>
             <p className="mt-4 text-4xl font-semibold">SEV-1</p>
-            <p className="mt-2 text-xs text-slate-600">
+            <p className="mt-2 text-xs text-[#8d8d85]">
               02 recorded incidents
             </p>
           </div>
 
-          <div className="bg-slate-950 p-6 md:p-8">
-            <p className="text-xs uppercase tracking-[0.16em] text-slate-600">
+          <div className="bg-[#f6f5f0] p-6 md:p-8">
+            <p className="text-xs uppercase tracking-[0.16em] text-[#8d8d85]">
               Memory
             </p>
             <p className="mt-4 text-4xl font-semibold">ACTIVE</p>
-            <p className="mt-2 text-xs text-emerald-500">
+            <p className="mt-2 text-xs text-emerald-700">
               Hindsight connected
             </p>
           </div>
@@ -90,10 +90,10 @@ export default function AnalyticsPage() {
 
         <div className="mt-8 grid gap-8 lg:grid-cols-2">
           {/* Incidents by service */}
-          <section className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
+          <section className="rounded-3xl border border-black/10 bg-[#111111]/[0.03] p-6 md:p-8">
             <div className="flex items-end justify-between">
               <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-slate-500">
+                <p className="text-xs uppercase tracking-[0.18em] text-[#77776f]">
                   Incident concentration
                 </p>
                 <h2 className="mt-3 text-xl font-semibold">
@@ -101,15 +101,15 @@ export default function AnalyticsPage() {
                 </h2>
               </div>
 
-              <span className="text-xs text-slate-600">Historical records</span>
+              <span className="text-xs text-[#8d8d85]">Historical records</span>
             </div>
 
             <div className="mt-8 space-y-6">
               {services.map((service) => (
                 <div key={service.name}>
                   <div className="mb-2 flex items-center justify-between text-sm">
-                    <span className="text-slate-300">{service.name}</span>
-                    <span className="text-slate-500">
+                    <span className="text-[#30302d]">{service.name}</span>
+                    <span className="text-[#77776f]">
                       {service.incidents} incident
                       {service.incidents === 1 ? "" : "s"}
                     </span>
@@ -117,7 +117,7 @@ export default function AnalyticsPage() {
 
                   <div className="h-2 overflow-hidden rounded-full bg-slate-800">
                     <div
-                      className="h-full rounded-full bg-white"
+                      className="h-full rounded-full bg-[#111111]"
                       style={{ width: service.width }}
                     />
                   </div>
@@ -127,10 +127,10 @@ export default function AnalyticsPage() {
           </section>
 
           {/* Severity */}
-          <section className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
+          <section className="rounded-3xl border border-black/10 bg-[#111111]/[0.03] p-6 md:p-8">
             <div className="flex items-end justify-between">
               <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-slate-500">
+                <p className="text-xs uppercase tracking-[0.18em] text-[#77776f]">
                   Severity distribution
                 </p>
                 <h2 className="mt-3 text-xl font-semibold">
@@ -138,22 +138,22 @@ export default function AnalyticsPage() {
                 </h2>
               </div>
 
-              <span className="text-xs text-slate-600">Historical records</span>
+              <span className="text-xs text-[#8d8d85]">Historical records</span>
             </div>
 
             <div className="mt-8 space-y-6">
               {severity.map((item) => (
                 <div key={item.label}>
                   <div className="mb-2 flex items-center justify-between text-sm">
-                    <span className="text-slate-300">{item.label}</span>
-                    <span className="text-slate-500">
+                    <span className="text-[#30302d]">{item.label}</span>
+                    <span className="text-[#77776f]">
                       {item.count} incident{item.count === 1 ? "" : "s"}
                     </span>
                   </div>
 
                   <div className="h-2 overflow-hidden rounded-full bg-slate-800">
                     <div
-                      className="h-full rounded-full bg-white"
+                      className="h-full rounded-full bg-[#111111]"
                       style={{ width: item.width }}
                     />
                   </div>
@@ -161,7 +161,7 @@ export default function AnalyticsPage() {
               ))}
             </div>
 
-            <div className="mt-8 border-t border-white/10 pt-5 text-sm leading-6 text-slate-500">
+            <div className="mt-8 border-t border-black/10 pt-5 text-sm leading-6 text-[#77776f]">
               Severity is based on the incident records currently stored for
               the hackathon demo.
             </div>
@@ -169,16 +169,16 @@ export default function AnalyticsPage() {
         </div>
 
         {/* Latency */}
-        <section className="mt-8 rounded-3xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
+        <section className="mt-8 rounded-3xl border border-black/10 bg-[#111111]/[0.03] p-6 md:p-8">
           <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
             <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-slate-500">
+              <p className="text-xs uppercase tracking-[0.18em] text-[#77776f]">
                 Demo telemetry
               </p>
               <h2 className="mt-3 text-2xl font-semibold">
                 Peak latency by service
               </h2>
-              <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500">
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-[#77776f]">
                 Illustrative latency values for the hackathon dashboard. These
                 values are demo telemetry, not live production monitoring data.
               </p>
@@ -186,7 +186,7 @@ export default function AnalyticsPage() {
 
             <Link
               href="/incidents"
-              className="text-sm text-slate-500 transition hover:text-white"
+              className="text-sm text-[#77776f] transition hover:text-[#111111]"
             >
               Open incident archive →
             </Link>
@@ -196,7 +196,7 @@ export default function AnalyticsPage() {
             {services.map((service) => (
               <div key={service.name}>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-slate-300">
+                  <span className="text-sm text-[#30302d]">
                     {service.name}
                   </span>
                   <span className="text-sm font-semibold">
@@ -206,12 +206,12 @@ export default function AnalyticsPage() {
 
                 <div className="mt-3 h-3 overflow-hidden rounded-full bg-slate-800">
                   <div
-                    className="h-full rounded-full bg-white"
+                    className="h-full rounded-full bg-[#111111]"
                     style={{ width: service.width }}
                   />
                 </div>
 
-                <p className="mt-2 text-xs text-slate-600">
+                <p className="mt-2 text-xs text-[#8d8d85]">
                   Peak observed in demo scenario
                 </p>
               </div>
@@ -220,8 +220,8 @@ export default function AnalyticsPage() {
         </section>
 
         {/* Insight */}
-        <section className="mt-8 rounded-3xl border border-white/10 p-6 md:p-8">
-          <p className="text-xs uppercase tracking-[0.18em] text-slate-500">
+        <section className="mt-8 rounded-3xl border border-black/10 p-6 md:p-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-[#77776f]">
             04 / OBSERVATION
           </p>
 
@@ -230,7 +230,7 @@ export default function AnalyticsPage() {
               Payment API appears most frequently in the current demo dataset.
             </h2>
 
-            <p className="mt-4 text-sm leading-7 text-slate-500">
+            <p className="mt-4 text-sm leading-7 text-[#77776f]">
               The visualization helps engineers see where incident memory is
               accumulating. As real incident records grow, this page can be
               connected to measured latency, duration, and service telemetry.

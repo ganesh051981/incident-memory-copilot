@@ -45,12 +45,12 @@ const memories = [
 
 export default function MemoryPage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
+    <main className="min-h-screen bg-[#f6f5f0] text-[#111111]">
       <Navbar />
 
       <div className="mx-auto max-w-7xl px-6 py-14 md:px-10 md:py-20">
         <div className="max-w-4xl">
-          <p className="text-xs uppercase tracking-[0.28em] text-slate-500">
+          <p className="text-xs uppercase tracking-[0.28em] text-[#77776f]">
             02 / ORGANIZATIONAL MEMORY
           </p>
 
@@ -60,49 +60,49 @@ export default function MemoryPage() {
             WE LEARN?
           </h1>
 
-          <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-500 md:text-base">
+          <p className="mt-6 max-w-2xl text-sm leading-7 text-[#77776f] md:text-base">
             Previous incidents become reusable engineering knowledge. Search
             the organization&apos;s memory before starting from scratch.
           </p>
         </div>
 
-        <section className="mt-12 rounded-3xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
+        <section className="mt-12 rounded-3xl border border-black/10 bg-[#111111]/[0.03] p-6 md:p-8">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-slate-500">
+              <p className="text-xs uppercase tracking-[0.18em] text-[#77776f]">
                 Memory index
               </p>
-              <p className="mt-2 text-sm text-slate-400">
+              <p className="mt-2 text-sm text-[#575751]">
                 {memories.length} historical incident records
               </p>
             </div>
 
             <Link
               href="/analyze"
-              className="rounded-full border border-white/15 px-5 py-2.5 text-sm text-white transition hover:bg-white/5"
+              className="rounded-full border border-black/15 px-5 py-2.5 text-sm text-[#111111] transition hover:bg-black/5"
             >
               Analyze a new incident →
             </Link>
           </div>
 
-          <div className="mt-8 border-y border-white/10">
+          <div className="mt-8 border-y border-black/10">
             {memories.map((memory, index) => (
               <article
                 key={memory.id}
                 className={`py-7 ${
-                  index !== memories.length - 1 ? "border-b border-white/10" : ""
+                  index !== memories.length - 1 ? "border-b border-black/10" : ""
                 }`}
               >
                 <div className="grid gap-6 md:grid-cols-[140px_1fr_100px]">
                   <div>
                     <div className="text-sm font-semibold">{memory.id}</div>
-                    <div className="mt-2 text-xs text-slate-600">
+                    <div className="mt-2 text-xs text-[#8d8d85]">
                       {memory.date}
                     </div>
                   </div>
 
                   <div>
-                    <div className="text-xs uppercase tracking-[0.14em] text-slate-600">
+                    <div className="text-xs uppercase tracking-[0.14em] text-[#8d8d85]">
                       {memory.service}
                     </div>
 
@@ -110,32 +110,32 @@ export default function MemoryPage() {
                       {memory.title}
                     </h2>
 
-                    <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-400">
+                    <p className="mt-3 max-w-3xl text-sm leading-7 text-[#575751]">
                       {memory.summary}
                     </p>
 
                     <div className="mt-5 grid gap-5 md:grid-cols-2">
                       <div>
-                        <div className="text-[11px] uppercase tracking-[0.14em] text-slate-600">
+                        <div className="text-[11px] uppercase tracking-[0.14em] text-[#8d8d85]">
                           Root cause
                         </div>
-                        <p className="mt-2 text-sm leading-6 text-slate-400">
+                        <p className="mt-2 text-sm leading-6 text-[#575751]">
                           {memory.rootCause}
                         </p>
                       </div>
 
                       <div>
-                        <div className="text-[11px] uppercase tracking-[0.14em] text-slate-600">
+                        <div className="text-[11px] uppercase tracking-[0.14em] text-[#8d8d85]">
                           Lesson retained
                         </div>
-                        <p className="mt-2 text-sm leading-6 text-slate-400">
+                        <p className="mt-2 text-sm leading-6 text-[#575751]">
                           {memory.lesson}
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="text-xs uppercase tracking-[0.14em] text-slate-500">
+                  <div className="text-xs uppercase tracking-[0.14em] text-[#77776f]">
                     {memory.severity}
                   </div>
                 </div>
@@ -144,18 +144,18 @@ export default function MemoryPage() {
           </div>
         </section>
 
-        <div className="mt-8 flex flex-col justify-between gap-4 rounded-3xl border border-emerald-900/50 bg-emerald-950/20 p-6 md:flex-row md:items-center">
+        <div className="mt-8 flex flex-col justify-between gap-4 rounded-3xl border border-emerald-700/40 bg-[#edf7ef]/20 p-6 md:flex-row md:items-center">
           <div>
-            <p className="text-sm font-medium text-emerald-400">
+            <p className="text-sm font-medium text-emerald-700">
               Memory system connected
             </p>
-            <p className="mt-1 text-sm text-slate-500">
+            <p className="mt-1 text-sm text-[#77776f]">
               Hindsight stores and retrieves incident knowledge for future
               analysis.
             </p>
           </div>
 
-          <span className="rounded-full border border-emerald-800 px-4 py-2 text-xs uppercase tracking-[0.12em] text-emerald-400">
+          <span className="rounded-full border border-emerald-700 px-4 py-2 text-xs uppercase tracking-[0.12em] text-emerald-700">
             Hindsight Online
           </span>
         </div>

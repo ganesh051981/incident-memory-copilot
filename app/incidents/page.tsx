@@ -32,11 +32,11 @@ const incidents = [
 
 export default function IncidentsPage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
+    <main className="min-h-screen bg-[#f6f5f0] text-[#111111]">
       <Navbar />
 
       <div className="mx-auto max-w-7xl px-6 py-14 md:px-10 md:py-20">
-        <p className="text-xs uppercase tracking-[0.28em] text-slate-500">
+        <p className="text-xs uppercase tracking-[0.28em] text-[#77776f]">
           03 / INCIDENT ARCHIVE
         </p>
 
@@ -46,52 +46,52 @@ export default function IncidentsPage() {
           LEAVES A LESSON.
         </h1>
 
-        <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-500 md:text-base">
+        <p className="mt-6 max-w-2xl text-sm leading-7 text-[#77776f] md:text-base">
           A structured history of production incidents, their causes and the
           fixes retained for future response.
         </p>
 
         <div className="mt-12 grid gap-3 md:grid-cols-3">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-            <p className="text-xs uppercase tracking-[0.14em] text-slate-600">
+          <div className="rounded-2xl border border-black/10 bg-[#111111]/[0.03] p-5">
+            <p className="text-xs uppercase tracking-[0.14em] text-[#8d8d85]">
               Total incidents
             </p>
             <p className="mt-3 text-3xl font-semibold">03</p>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-            <p className="text-xs uppercase tracking-[0.14em] text-slate-600">
+          <div className="rounded-2xl border border-black/10 bg-[#111111]/[0.03] p-5">
+            <p className="text-xs uppercase tracking-[0.14em] text-[#8d8d85]">
               Resolved
             </p>
             <p className="mt-3 text-3xl font-semibold">03</p>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-            <p className="text-xs uppercase tracking-[0.14em] text-slate-600">
+          <div className="rounded-2xl border border-black/10 bg-[#111111]/[0.03] p-5">
+            <p className="text-xs uppercase tracking-[0.14em] text-[#8d8d85]">
               Services affected
             </p>
             <p className="mt-3 text-3xl font-semibold">03</p>
           </div>
         </div>
 
-        <section className="mt-8 overflow-hidden rounded-3xl border border-white/10">
+        <section className="mt-8 overflow-hidden rounded-3xl border border-black/10">
           {incidents.map((incident, index) => (
             <article
               key={incident.id}
-              className={`bg-white/[0.02] p-6 md:p-8 ${
-                index !== incidents.length - 1 ? "border-b border-white/10" : ""
+              className={`bg-[#111111]/[0.02] p-6 md:p-8 ${
+                index !== incidents.length - 1 ? "border-b border-black/10" : ""
               }`}
             >
               <div className="grid gap-6 md:grid-cols-[150px_1fr_110px]">
                 <div>
                   <p className="font-semibold">{incident.id}</p>
-                  <p className="mt-2 text-xs text-slate-600">
+                  <p className="mt-2 text-xs text-[#8d8d85]">
                     {incident.date}
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-xs uppercase tracking-[0.14em] text-slate-600">
+                  <p className="text-xs uppercase tracking-[0.14em] text-[#8d8d85]">
                     {incident.service}
                   </p>
 
@@ -99,15 +99,15 @@ export default function IncidentsPage() {
                     {incident.cause}
                   </h2>
 
-                  <p className="mt-4 text-sm leading-6 text-slate-500">
-                    <span className="text-slate-400">Resolution:</span>{" "}
+                  <p className="mt-4 text-sm leading-6 text-[#77776f]">
+                    <span className="text-[#575751]">Resolution:</span>{" "}
                     {incident.fix}
                   </p>
                 </div>
 
-                <div className="text-xs uppercase tracking-[0.14em] text-slate-500">
+                <div className="text-xs uppercase tracking-[0.14em] text-[#77776f]">
                   <div>{incident.severity}</div>
-                  <div className="mt-3 text-emerald-500">{incident.status}</div>
+                  <div className="mt-3 text-emerald-700">{incident.status}</div>
                 </div>
               </div>
             </article>

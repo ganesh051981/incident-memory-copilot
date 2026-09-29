@@ -85,12 +85,12 @@ export default function ChatPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
+    <main className="min-h-screen bg-[#f6f5f0] text-[#111111]">
       <Navbar />
 
       <div className="mx-auto max-w-5xl px-6 py-14 md:px-10 md:py-20">
         <div className="max-w-4xl">
-          <p className="text-xs uppercase tracking-[0.28em] text-slate-500">
+          <p className="text-xs uppercase tracking-[0.28em] text-[#77776f]">
             04 / MEMORY COPILOT
           </p>
 
@@ -100,25 +100,25 @@ export default function ChatPage() {
             ORGANIZATION.
           </h1>
 
-          <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-500 md:text-base">
+          <p className="mt-6 max-w-2xl text-sm leading-7 text-[#77776f] md:text-base">
             Ask questions about incidents, causes, resolutions and lessons.
             Memory Copilot searches Hindsight before Groq generates an answer.
           </p>
         </div>
 
-        <section className="mt-12 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]">
-          <div className="border-b border-white/10 p-6 md:p-8">
+        <section className="mt-12 overflow-hidden rounded-3xl border border-black/10 bg-[#111111]/[0.03]">
+          <div className="border-b border-black/10 p-6 md:p-8">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-slate-500">
+                <p className="text-xs uppercase tracking-[0.18em] text-[#77776f]">
                   Conversation
                 </p>
-                <p className="mt-2 text-sm text-slate-600">
+                <p className="mt-2 text-sm text-[#8d8d85]">
                   Hindsight → Groq
                 </p>
               </div>
 
-              <div className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-500">
+              <div className="rounded-full border border-black/10 px-3 py-1 text-xs text-[#77776f]">
                 Memory grounded
               </div>
             </div>
@@ -130,24 +130,24 @@ export default function ChatPage() {
                 key={`${item.role}-${index}`}
                 className={item.role === "user" ? "ml-auto max-w-2xl" : "max-w-3xl"}
               >
-                <div className="mb-2 text-[11px] uppercase tracking-[0.14em] text-slate-600">
+                <div className="mb-2 text-[11px] uppercase tracking-[0.14em] text-[#8d8d85]">
                   {item.role === "user" ? "You" : "Memory Copilot"}
                 </div>
 
                 <div
                   className={`rounded-2xl border p-5 ${
                     item.role === "user"
-                      ? "border-white/10 bg-white/[0.06]"
-                      : "border-white/10 bg-slate-950"
+                      ? "border-black/10 bg-[#111111]/[0.06]"
+                      : "border-black/10 bg-[#f6f5f0]"
                   }`}
                 >
-                  <div className="whitespace-pre-wrap text-sm leading-7 text-slate-300">
+                  <div className="whitespace-pre-wrap text-sm leading-7 text-[#30302d]">
                     {item.content}
                   </div>
 
                   {item.role === "assistant" && item.memoryUsed && (
-                    <div className="mt-4 border-t border-white/10 pt-3">
-                      <span className="text-xs uppercase tracking-[0.12em] text-emerald-400">
+                    <div className="mt-4 border-t border-black/10 pt-3">
+                      <span className="text-xs uppercase tracking-[0.12em] text-emerald-700">
                         Hindsight memory used
                       </span>
                     </div>
@@ -158,19 +158,19 @@ export default function ChatPage() {
 
             {loading && (
               <div className="max-w-3xl">
-                <div className="mb-2 text-[11px] uppercase tracking-[0.14em] text-slate-600">
+                <div className="mb-2 text-[11px] uppercase tracking-[0.14em] text-[#8d8d85]">
                   Memory Copilot
                 </div>
 
-                <div className="rounded-2xl border border-white/10 bg-slate-950 p-5 text-sm text-slate-600">
+                <div className="rounded-2xl border border-black/10 bg-[#f6f5f0] p-5 text-sm text-[#8d8d85]">
                   Searching organizational memory...
                 </div>
               </div>
             )}
           </div>
 
-          <div className="border-t border-white/10 p-6 md:p-8">
-            <p className="mb-3 text-xs uppercase tracking-[0.16em] text-slate-600">
+          <div className="border-t border-black/10 p-6 md:p-8">
+            <p className="mb-3 text-xs uppercase tracking-[0.16em] text-[#8d8d85]">
               Try a question
             </p>
 
@@ -180,7 +180,7 @@ export default function ChatPage() {
                   key={question}
                   type="button"
                   onClick={() => setMessage(question)}
-                  className="rounded-full border border-white/10 px-3 py-2 text-xs text-slate-500 transition hover:border-white/20 hover:text-white"
+                  className="rounded-full border border-black/10 px-3 py-2 text-xs text-[#77776f] transition hover:border-[#111111]/20 hover:text-[#111111]"
                 >
                   {question}
                 </button>
@@ -193,16 +193,16 @@ export default function ChatPage() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Ask about a previous incident..."
-                  className="min-h-12 flex-1 rounded-full border border-white/10 bg-slate-950 px-5 text-sm text-white outline-none placeholder:text-slate-700 focus:border-white/25"
+                  className="min-h-12 flex-1 rounded-full border border-black/10 bg-[#f6f5f0] px-5 text-sm text-[#111111] outline-none placeholder:text-[#a3a39b] focus:border-black/25"
                 />
 
                 <button
-                  type="submit"
-                  disabled={loading || !message.trim()}
-                  className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-40"
-                >
-                  {loading ? "Thinking..." : "Ask Groq →"}
-                </button>
+  type="submit"
+  disabled={loading || !message.trim()}
+  className="rounded-full bg-[#111111] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#2a2a2a] disabled:cursor-not-allowed disabled:opacity-40"
+>
+  {loading ? "Thinking..." : "Ask Groq ->"}
+</button>
               </div>
             </form>
           </div>
