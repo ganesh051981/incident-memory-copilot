@@ -27,10 +27,10 @@ export default function DashboardShell({
         <div className="border-b border-white/10 px-6 py-7">
           <Link href="/" className="block">
             <div className="text-sm font-semibold tracking-[0.2em]">
-              INCIDENT
+              INCIDENT MEMORY
             </div>
             <div className="text-sm font-semibold tracking-[0.2em] text-white/60">
-              MEMORY
+              COPILOT
             </div>
           </Link>
 
