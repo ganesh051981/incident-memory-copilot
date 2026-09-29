@@ -1,8 +1,8 @@
 ﻿import Link from "next/link";
-import Navbar from "../components/Navbar";
+import DashboardShell from "../components/DashboardShell";
 
 const services = [
-  { name: "Payment API", incidents: 2, peakLatency: "1.8 s", width: "100%" },
+  { name: "Payment API", incidents: 1, peakLatency: "1.8 s", width: "100%" },
   {
     name: "Authentication",
     incidents: 1,
@@ -24,8 +24,9 @@ const severity = [
 
 export default function AnalyticsPage() {
   return (
+    <DashboardShell>
     <main className="min-h-screen bg-[#f6f5f0] text-[#111111]">
-      <Navbar />
+      
 
       <div className="mx-auto max-w-7xl px-6 py-14 md:px-10 md:py-20">
         <div className="max-w-4xl">
@@ -239,5 +240,6 @@ export default function AnalyticsPage() {
         </section>
       </div>
     </main>
+    </DashboardShell>
   );
 }

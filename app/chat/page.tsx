@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import { FormEvent, useState } from "react";
-import Navbar from "../components/Navbar";
+import DashboardShell from "../components/DashboardShell";
 
 type ChatMessage = {
   role: "user" | "assistant";
@@ -85,8 +85,9 @@ export default function ChatPage() {
   ];
 
   return (
+    <DashboardShell>
     <main className="min-h-screen bg-[#f6f5f0] text-[#111111]">
-      <Navbar />
+      
 
       <div className="mx-auto max-w-5xl px-6 py-14 md:px-10 md:py-20">
         <div className="max-w-4xl">
@@ -209,5 +210,6 @@ export default function ChatPage() {
         </section>
       </div>
     </main>
+    </DashboardShell>
   );
 }

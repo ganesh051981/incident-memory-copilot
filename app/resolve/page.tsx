@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import { useState } from "react";
-import Navbar from "../components/Navbar";
+import DashboardShell from "../components/DashboardShell";
 
 type Resolution = {
   incidentId: string;
@@ -92,8 +92,9 @@ export default function ResolvePage() {
   };
 
   return (
+    <DashboardShell>
     <main className="min-h-screen bg-[#f6f5f0] text-[#111111]">
-      <Navbar />
+      
 
       <div className="mx-auto max-w-5xl px-6 py-14 md:px-10 md:py-20">
         <div>
@@ -239,6 +240,7 @@ export default function ResolvePage() {
         </section>
       </div>
     </main>
+    </DashboardShell>
   );
 }
 

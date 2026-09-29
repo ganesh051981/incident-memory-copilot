@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import { useState } from "react";
-import Navbar from "../components/Navbar";
+import DashboardShell from "../components/DashboardShell";
 
 type AnalysisResponse = {
   success: boolean;
@@ -45,8 +45,9 @@ export default function AnalyzePage() {
   };
 
   return (
+    <DashboardShell>
     <main className="min-h-screen bg-[#f6f5f0] text-[#111111]">
-      <Navbar />
+      
 
       <div className="mx-auto max-w-7xl px-6 py-14 md:px-10 md:py-20">
         <div className="mb-12">
@@ -190,5 +191,6 @@ export default function AnalyzePage() {
         )}
       </div>
     </main>
+    </DashboardShell>
   );
 }

@@ -1,5 +1,5 @@
 ﻿import Link from "next/link";
-import Navbar from "../components/Navbar";
+import DashboardShell from "../components/DashboardShell";
 
 const memories = [
   {
@@ -45,8 +45,9 @@ const memories = [
 
 export default function MemoryPage() {
   return (
+    <DashboardShell>
     <main className="min-h-screen bg-[#f6f5f0] text-[#111111]">
-      <Navbar />
+      
 
       <div className="mx-auto max-w-7xl px-6 py-14 md:px-10 md:py-20">
         <div className="max-w-4xl">
@@ -161,5 +162,6 @@ export default function MemoryPage() {
         </div>
       </div>
     </main>
+    </DashboardShell>
   );
 }

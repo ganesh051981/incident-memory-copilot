@@ -1,4 +1,4 @@
-﻿import Navbar from "../components/Navbar";
+﻿import DashboardShell from "../components/DashboardShell";
 
 const incidents = [
   {
@@ -32,8 +32,9 @@ const incidents = [
 
 export default function IncidentsPage() {
   return (
+    <DashboardShell>
     <main className="min-h-screen bg-[#f6f5f0] text-[#111111]">
-      <Navbar />
+      
 
       <div className="mx-auto max-w-7xl px-6 py-14 md:px-10 md:py-20">
         <p className="text-xs uppercase tracking-[0.28em] text-[#77776f]">
@@ -115,5 +116,6 @@ export default function IncidentsPage() {
         </section>
       </div>
     </main>
+    </DashboardShell>
   );
 }
